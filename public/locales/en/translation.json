@@ -1,4 +1,7 @@
 {
+  "throw error": "throw error",
+  "Обновить страницу": "Refresh page",
+  "Произошла непредвиденная ошибка": "Unexpected error has occurred",
   "Страница не найдена": "Page not found",
   "Тестовый пример": "Test example",
   "Язык": "English"
