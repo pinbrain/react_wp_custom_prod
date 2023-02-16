@@ -1,5 +1,5 @@
 name: linting, testing, building
-on: 
+on:
   push:
     branches: [ master ]
   pull_request:
