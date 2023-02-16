@@ -6,10 +6,10 @@ on:
     branches: [ master ]
 jobs:
   pipeline:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [ 17.x ]
+        node-version: [ 18.14.0 ]
 
     steps:
       - uses: actions/checkout@v2
