@@ -14,7 +14,8 @@ export default ({ config }: { config: webpack.Configuration }) => {
   config.resolve?.modules?.push(paths.src);
   config.resolve?.extensions?.push('.ts', '.tsx');
 
-  config!.module!.rules = config!.module!.rules!.map((rule: any) => {
+  // eslint-disable-next-line no-param-reassign
+  config.module!.rules! = config!.module!.rules!.map((rule: any) => {
     if (/svg/.test(rule.test as string)) {
       return { ...rule, exclude: /\.svg$/i };
     }
