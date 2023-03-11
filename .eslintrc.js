@@ -43,10 +43,12 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': 'warn',
     'implicit-arrow-linebreak': 'off',
     'no-undef': 'off',
+    'operator-linebreak': 'off',
   },
   globals: {
     __IS_DEV__: true,
     __API__: true,
+    __PROJECT__: true,
   },
   overrides: [
     {
