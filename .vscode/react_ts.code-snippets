@@ -1,0 +1,48 @@
+{
+  // Place your production_project workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+  // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+  // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+  // used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+  // Placeholders with the same ids are connected.
+  // Example:
+  // "Print to console": {
+  // 	"scope": "javascript,typescript",
+  // 	"prefix": "log",
+  // 	"body": [
+  // 		"console.log('$1');",
+  // 		"$2"
+  // 	],
+  // 	"description": "Log output to console"
+  // }
+  "crate react component": {
+    "scope": "typescriptreact, typescript",
+    "prefix": ["rc"],
+    "body": [
+      "import { useTranslation } from 'react-i18next';",
+      "import { classNames } from 'shared/lib/classNames/classNames';",
+      "import cls from './${TM_FILENAME_BASE/(.*)/${1:/capitalize}/g}.module.scss';",
+      "",
+      "interface ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/g}Props {",
+      " className?: string;",
+      "}",
+      "",
+      "export const ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/g} = ({className}: ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/g}Props) => {",
+      "  const { t } = useTranslation();",
+      "",
+      "  return (",
+      "    <div className={classNames(cls.${TM_FILENAME_BASE/(.*)/${1:/capitalize}/g}, {}, [className])}>",
+      "",
+      "    </div>",
+      "  );",
+      "};"
+    ],
+    "description": "React template component"
+  },
+  "crate test for component": {
+    "scope": "typescriptreact, typescript",
+    "prefix": ["ts"],
+    "body": ["describe('$TM_FILENAME_BASE', () => {", "  test('$1', () => {", "  expect().toEqual()", "  })", "})"],
+    "description": "Create template test"
+  }
+}
