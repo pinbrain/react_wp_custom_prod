@@ -44,6 +44,8 @@ module.exports = {
     'implicit-arrow-linebreak': 'off',
     'no-undef': 'off',
     'operator-linebreak': 'off',
+    'arrow-body-style': 'off',
+    'react/no-array-index-key': 'off',
   },
   globals: {
     __IS_DEV__: true,
