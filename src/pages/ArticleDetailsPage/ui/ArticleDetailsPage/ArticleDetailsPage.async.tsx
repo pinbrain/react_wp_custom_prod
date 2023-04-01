@@ -5,6 +5,6 @@ export const ArticleDetailsPageAsync = lazy(
     new Promise((resolve) => {
       // @ts-ignore
       // Задержка для разработки
-      setTimeout(() => resolve(import('./ArticleDetailsPage')), 1500);
+      setTimeout(() => resolve(import('./ArticleDetailsPage')), 400);
     })
 );
