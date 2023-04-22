@@ -1,4 +1,5 @@
 {
+  "ProdAPP": "ProdAPP",
   "decrement": "decrement",
   "increment": "increment",
   "throw error": "throw error",
@@ -20,6 +21,7 @@
   "Поиск": "Search",
   "Произошла непредвиденная ошибка": "Unexpected error has occurred",
   "Профиль": "Profile",
+  "Создать статью": "Create article",
   "Сортировать ПО": "Sort BY",
   "Статьи": "Articles",
   "Статьи не найдены": "Articles not found",
