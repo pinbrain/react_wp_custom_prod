@@ -13,7 +13,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'i18next'],
+  plugins: ['react', '@typescript-eslint', 'i18next', 'pinbrain-path-check-plugin'],
   rules: {
     'react/jsx-indent': [2, 2],
     'react/jsx-indent-props': [2, 2],
@@ -46,6 +46,7 @@ module.exports = {
     'operator-linebreak': 'off',
     'arrow-body-style': 'off',
     'react/no-array-index-key': 'off',
+    'pinbrain-path-check-plugin/relative-path-checker': 'error',
   },
   globals: {
     __IS_DEV__: true,
