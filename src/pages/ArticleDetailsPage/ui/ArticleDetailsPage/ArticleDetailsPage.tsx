@@ -52,7 +52,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     dispatch(fetchArticleRecommendations());
   });
 
-  if (!id) {
+  if (!id && __PROJECT__ !== 'storybook') {
     return (
       <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
         {t('Статья не найдена', { ns: 'article-details' })}
@@ -64,7 +64,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
         <ArticleDetailsPageHeader />
-        <ArticleDetails id={id} />
+        <ArticleDetails id={id || '1'} />
         <Text size={TextSize.L} className={cls.commentTitle} title={t('Рекомендуем', { ns: 'article-details' })} />
         <ArticleList
           articles={recommendations}
