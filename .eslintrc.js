@@ -32,7 +32,10 @@ module.exports = {
     'object-curly-newline': 'off',
     'i18next/no-literal-string': [
       'error',
-      { markupOnly: true, ignoreAttribute: ['data-testid', 'to', 'target', 'justify', 'align', 'direction', 'gap'] },
+      {
+        markupOnly: true,
+        ignoreAttribute: ['data-testid', 'to', 'target', 'justify', 'align', 'direction', 'gap', 'role'],
+      },
     ],
     'comma-dangle': 'off',
     'max-len': ['error', { ignoreComments: true, code: 125 }],
