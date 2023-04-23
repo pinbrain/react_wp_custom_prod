@@ -30,7 +30,10 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'no-underscore-dangle': 'off',
     'object-curly-newline': 'off',
-    'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['data-testid', 'to', 'target'] }],
+    'i18next/no-literal-string': [
+      'error',
+      { markupOnly: true, ignoreAttribute: ['data-testid', 'to', 'target', 'justify', 'align', 'direction', 'gap'] },
+    ],
     'comma-dangle': 'off',
     'max-len': ['error', { ignoreComments: true, code: 125 }],
     'react/jsx-wrap-multilines': ['error', { arrow: true, return: true, declaration: true }],
