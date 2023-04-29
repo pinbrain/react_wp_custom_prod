@@ -7,7 +7,7 @@ import { Loader } from 'shared/ui/Loader/Loader';
 import ArticleDetailsPage from './ArticleDetailsPage';
 
 export default {
-  title: 'pages/Article/ArticleDetailsPage',
+  title: 'pages/ArticleDetailsPage/ArticleDetailsPage',
   component: ArticleDetailsPage,
   argTypes: {
     backgroundColor: { control: 'color' },
