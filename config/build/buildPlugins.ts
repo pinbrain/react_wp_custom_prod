@@ -10,10 +10,10 @@ import { BuildOptions } from './types/config';
 
 export function buildPlugins({ paths, isDev, apiUrl, project }: BuildOptions): webpack.WebpackPluginInstance[] {
   const plugins = [
-    new webpack.ProgressPlugin(),
     new HtmlWebpackPlugin({
       template: paths.html,
     }),
+    new webpack.ProgressPlugin(),
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash:8].css',
       chunkFilename: 'css/[name].[contenthash:8].css',
