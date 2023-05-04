@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import withMock from 'storybook-addon-mock';
-import { Notification } from 'entities/Notifications';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { Notification } from '@/entities/Notifications';
 import { NotificationButton } from './NotificationButton';
 
 export default {
