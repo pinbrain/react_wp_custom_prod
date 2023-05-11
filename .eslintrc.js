@@ -65,9 +65,13 @@ module.exports = {
     'arrow-body-style': 'off',
     'react/no-array-index-key': 'off',
     'pinbrain-path-check-plugin/relative-path-checker': ['error', { alias: '@' }],
+    'pinbrain-path-check-plugin/layer-imports': [
+      'error',
+      { alias: '@', ignoreImportPatterns: ['**/StoreProvider', '**/testing'] },
+    ],
     'pinbrain-path-check-plugin/public-api-imports': [
       'error',
-      { alias: '@', testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'] },
+      { alias: '@', testFilesPatterns: ['**/*.test.*', '**/*.stories.*', '**/StoreDecorator.tsx'] },
     ],
   },
   globals: {
