@@ -64,7 +64,7 @@ module.exports = {
     'operator-linebreak': 'off',
     'arrow-body-style': 'off',
     'react/no-array-index-key': 'off',
-    'pinbrain-path-check-plugin/relative-path-checker': 'error',
+    'pinbrain-path-check-plugin/relative-path-checker': ['error', { alias: '@' }],
   },
   globals: {
     __IS_DEV__: true,
