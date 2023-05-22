@@ -1,0 +1,11 @@
+{
+  "id": "1",
+  "first": "Test",
+  "lastname": "User",
+  "age": 21,
+  "currency": "USD",
+  "country": "Belarus",
+  "city": "Minsk",
+  "username": "testuser",
+  "avatar": "https://www.pngmart.com/files/22/User-Avatar-Profile-PNG.png"
+}
