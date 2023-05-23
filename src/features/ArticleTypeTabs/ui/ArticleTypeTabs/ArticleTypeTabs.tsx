@@ -18,7 +18,7 @@ export const ArticleTypeTabs = memo((props: ArticleTypeTabsProps) => {
     (tab: TabItem) => {
       onChangeType(tab.value as ArticleType);
     },
-    [onChangeType]
+    [onChangeType],
   );
 
   const typeTabs = useMemo<TabItem[]>(
@@ -40,8 +40,15 @@ export const ArticleTypeTabs = memo((props: ArticleTypeTabsProps) => {
         content: t('Наука'),
       },
     ],
-    [t]
+    [t],
   );
 
-  return <Tabs tabs={typeTabs} value={value} onTabClick={onTabClick} className={classNames('', {}, [className])} />;
+  return (
+    <Tabs
+      tabs={typeTabs}
+      value={value}
+      onTabClick={onTabClick}
+      className={classNames('', {}, [className])}
+    />
+  );
 });

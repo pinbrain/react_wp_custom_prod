@@ -26,13 +26,26 @@ interface ListBoxProps {
 }
 
 export const ListBox = memo((props: ListBoxProps) => {
-  const { items, className, value, defaultValue, onChange, readonly, direction = 'bottom right', label } = props;
+  const {
+    items,
+    className,
+    value,
+    defaultValue,
+    onChange,
+    readonly,
+    direction = 'bottom right',
+    label,
+  } = props;
 
   const optionsClasses = [mapDirectionClass[direction]];
 
   return (
     <HStack gap="4">
-      {label && <span className={classNames('', { [cls.disabled]: readonly }, [])}>{`${label}>`}</span>}
+      {label && (
+        <span
+          className={classNames('', { [cls.disabled]: readonly }, [])}
+        >{`${label}>`}</span>
+      )}
       <HListbox
         disabled={readonly}
         as="div"
@@ -43,15 +56,25 @@ export const ListBox = memo((props: ListBoxProps) => {
         <HListbox.Button className={cls.trigger} as="div">
           <Button disabled={readonly}>{value ?? defaultValue}</Button>
         </HListbox.Button>
-        <HListbox.Options className={classNames(cls.options, {}, optionsClasses)}>
+        <HListbox.Options
+          className={classNames(cls.options, {}, optionsClasses)}
+        >
           {items?.map((item) => (
-            <HListbox.Option key={item.value} value={item.value} disabled={item.disabled} as={Fragment}>
+            <HListbox.Option
+              key={item.value}
+              value={item.value}
+              disabled={item.disabled}
+              as={Fragment}
+            >
               {({ active, selected }) => (
                 <li
                   className={classNames(
                     cls.item,
-                    { [popupCls.active]: active, [popupCls.disabled]: item.disabled },
-                    []
+                    {
+                      [popupCls.active]: active,
+                      [popupCls.disabled]: item.disabled,
+                    },
+                    [],
                   )}
                 >
                   {item.content}

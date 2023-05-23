@@ -24,7 +24,7 @@ export const Tabs = memo((props: TabsProps) => {
         onTabClick(tab);
       };
     },
-    [onTabClick]
+    [onTabClick],
   );
 
   return (

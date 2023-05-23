@@ -26,5 +26,12 @@ export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
     return <Text text={t('Ошибка при загрузке статей', { ns: 'article' })} />;
   }
 
-  return <ArticleList className={className} isLoading={isLoading} view={view} articles={articles} />;
+  return (
+    <ArticleList
+      className={className}
+      isLoading={isLoading}
+      view={view}
+      articles={articles}
+    />
+  );
 });

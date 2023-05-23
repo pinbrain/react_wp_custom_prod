@@ -19,12 +19,16 @@ export const Popover = memo((props: PopoverProps) => {
   const menuClasses = [mapDirectionClass[direction]];
 
   return (
-    <HPopover className={classNames(cls.popover, {}, [className, popupCls.popup])}>
+    <HPopover
+      className={classNames(cls.popover, {}, [className, popupCls.popup])}
+    >
       <HPopover.Button className={popupCls.trigger} as="div">
         {trigger}
       </HPopover.Button>
 
-      <HPopover.Panel className={classNames(cls.panel, {}, menuClasses)}>{children}</HPopover.Panel>
+      <HPopover.Panel className={classNames(cls.panel, {}, menuClasses)}>
+        {children}
+      </HPopover.Panel>
     </HPopover>
   );
 });

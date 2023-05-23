@@ -22,7 +22,15 @@ interface RatingCardProps {
 }
 
 export const RatingCard = memo((props: RatingCardProps) => {
-  const { className, title, feedbackTitle, hasFeedback, onAccept, onCancel, rate = 0 } = props;
+  const {
+    className,
+    title,
+    feedbackTitle,
+    hasFeedback,
+    onAccept,
+    onCancel,
+    rate = 0,
+  } = props;
   const { t } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [starsCount, setStarsCount] = useState(rate);
@@ -37,7 +45,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
         onAccept?.(selectedStarsCount);
       }
     },
-    [hasFeedback, onAccept]
+    [hasFeedback, onAccept],
   );
 
   const acceptHandler = useCallback(() => {
@@ -53,22 +61,39 @@ export const RatingCard = memo((props: RatingCardProps) => {
   const modalContent = (
     <>
       <Text title={feedbackTitle} />
-      <Input value={feedback} onChange={setFeedback} placeholder={t('Ваш отзыв')} data-testid="RatingCard.Input" />
+      <Input
+        value={feedback}
+        onChange={setFeedback}
+        placeholder={t('Ваш отзыв')}
+        data-testid="RatingCard.Input"
+      />
     </>
   );
 
   return (
-    <Card className={classNames('', {}, [className])} max data-testid="RatingCard">
+    <Card
+      className={classNames('', {}, [className])}
+      max
+      data-testid="RatingCard"
+    >
       <VStack align="center" gap="8" max>
         <Text title={starsCount ? t('Спасибо за оценку!') : title} />
-        <StarRating size={40} onSelect={onSelectStars} selectedStars={starsCount} />
+        <StarRating
+          size={40}
+          onSelect={onSelectStars}
+          selectedStars={starsCount}
+        />
       </VStack>
       <BrowserView>
         <Modal isOpen={isModalOpen} lazy>
           <VStack max gap="32">
             {modalContent}
             <HStack max gap="16" justify="end">
-              <Button onClick={cancelHandler} theme={ButtonTheme.OUTLINE_RED} data-testid="RatingCard.Close">
+              <Button
+                onClick={cancelHandler}
+                theme={ButtonTheme.OUTLINE_RED}
+                data-testid="RatingCard.Close"
+              >
                 {t('Закрыть')}
               </Button>
               <Button onClick={acceptHandler} data-testid="RatingCard.Send">

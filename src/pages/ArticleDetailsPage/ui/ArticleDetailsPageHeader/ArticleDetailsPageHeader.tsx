@@ -13,33 +13,35 @@ interface ArticleDetailsPageHeaderProps {
   className?: string;
 }
 
-export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderProps) => {
-  const { className } = props;
-  const { t } = useTranslation();
-  const navigate = useNavigate();
-  const article = useSelector(getArticleDetailsData);
-  const canEdit = useSelector(getCanEditArticle);
+export const ArticleDetailsPageHeader = memo(
+  (props: ArticleDetailsPageHeaderProps) => {
+    const { className } = props;
+    const { t } = useTranslation();
+    const navigate = useNavigate();
+    const article = useSelector(getArticleDetailsData);
+    const canEdit = useSelector(getCanEditArticle);
 
-  const onBackToList = useCallback(() => {
-    navigate(getRouteArticles());
-  }, [navigate]);
+    const onBackToList = useCallback(() => {
+      navigate(getRouteArticles());
+    }, [navigate]);
 
-  const onEditArticle = useCallback(() => {
-    if (article) {
-      navigate(getRouteArticleEdit(article.id));
-    }
-  }, [article, navigate]);
+    const onEditArticle = useCallback(() => {
+      if (article) {
+        navigate(getRouteArticleEdit(article.id));
+      }
+    }, [article, navigate]);
 
-  return (
-    <HStack max justify="between" className={classNames('', {}, [className])}>
-      <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
-        {t('Назад к списку', { ns: 'article-details' })}
-      </Button>
-      {canEdit && (
-        <Button theme={ButtonTheme.OUTLINE} onClick={onEditArticle}>
-          {t('Редактировать', { ns: 'article-details' })}
+    return (
+      <HStack max justify="between" className={classNames('', {}, [className])}>
+        <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
+          {t('Назад к списку', { ns: 'article-details' })}
         </Button>
-      )}
-    </HStack>
-  );
-});
+        {canEdit && (
+          <Button theme={ButtonTheme.OUTLINE} onClick={onEditArticle}>
+            {t('Редактировать', { ns: 'article-details' })}
+          </Button>
+        )}
+      </HStack>
+    );
+  },
+);

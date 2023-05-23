@@ -1,6 +1,10 @@
 {
   "typescript.tsdk": "node_modules\\typescript\\lib",
-  "i18n-ally.localesPaths": ["public/locales", "src/shared/config/i18n", "D:/ulbi_production_project/public/locales"],
+  "i18n-ally.localesPaths": [
+    "public/locales",
+    "src/shared/config/i18n",
+    "D:/ulbi_production_project/public/locales"
+  ],
   "i18n-ally.sourceLanguage": "ru",
   "i18n-ally.keystyle": "nested"
 }

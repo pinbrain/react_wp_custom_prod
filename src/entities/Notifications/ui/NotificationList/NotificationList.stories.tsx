@@ -13,7 +13,9 @@ export default {
   decorators: [StoreDecorator({}), withMock],
 } as ComponentMeta<typeof NotificationList>;
 
-const Template: ComponentStory<typeof NotificationList> = (args) => <NotificationList {...args} />;
+const Template: ComponentStory<typeof NotificationList> = (args) => (
+  <NotificationList {...args} />
+);
 
 const notifications: Notification[] = [
   {
